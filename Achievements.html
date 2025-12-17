@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Home Page</title>
-  <link rel="stylesheet" href="About.css">
+  <link rel="stylesheet" href="Achievements.css">
 </head>
 <body style = "background-color: #000745;">
   <style>
@@ -153,56 +153,69 @@
   </button>
 </div>
 
-<main class="about-container">
 
-  <!-- INTRO CARD -->
-  <section class="about-hero">
-    <img src="Sevda.jpg" alt="Profile photo" class="about-pfp">
-    <h1>About Me</h1>
-    <p class="about-intro">
-      <!-- Short personal background (2–3 lines) -->
-    </p>
+<main class="timeline-container">
+
+  <section class="timeline-hero">
+    <h1>My Journey</h1>
+    <p>Here’s a visual journey through my learning, projects, and achievements so far.</p>
   </section>
 
-  <!-- BACKGROUND -->
-  <section class="about-section">
-    <h2>Background</h2>
-    <p>
-      <!-- Education, where you’re from, interests -->
-    </p>
-  </section>
+  <section class="timeline">
 
-  <!-- QUALIFICATIONS -->
-  <section class="about-section">
-    <h2>Qualifications</h2>
-    <ul class="about-list">
-      <li><!-- Qualification 1 --></li>
-      <li><!-- Qualification 2 --></li>
-      <li><!-- Qualification 3 --></li>
-    </ul>
-  </section>
+    <!-- Milestone 1 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">🎓</div>
+      <div class="timeline-content">
+        <h2>2018 – Started Coding</h2>
+        <p>My first experience with programming in Scratch. I loved creating interactive projects!</p>
+      </div>
+    </div>
 
-  <!-- ACTIVITIES & PROJECTS -->
-  <section class="about-section">
-    <h2>Activities & Experience</h2>
-    <ul class="about-list">
-      <li><!-- Activity / Project --></li>
-      <li><!-- Competition / Club / Course --></li>
-      <li><!-- Volunteering / Independent learning --></li>
-    </ul>
-  </section>
+    <!-- Milestone 2 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">💻</div>
+      <div class="timeline-content">
+        <h2>2022 – First Project</h2>
+        <p>Completed my first HTML/CSS project, made a website about Michael Jackson!</p>
+      </div>
+    </div>
 
-  <!-- ACHIEVEMENTS -->
-  <section class="about-section highlight">
-    <h2>Achievements</h2>
-    <ul class="about-list">
-      <li><!-- Achievement 1 --></li>
-      <li><!-- Achievement 2 --></li>
-      <li><!-- Achievement 3 --></li>
-    </ul>
+    <!-- Milestone 3 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">🏆</div>
+      <div class="timeline-content">
+        <h2>2024 – Achievements & Awards</h2>
+        <p>Participated in coding competitions and earned recognition for my innovative projects.</p>
+      </div>
+    </div>
+
+    <!-- Add more milestones as you wish -->
+    
   </section>
 
 </main>
+
+ <script>
+    document.addEventListener("mousemove", e => {
+      const trail = document.createElement("div");
+      trail.classList.add("cursor-trail");
+      trail.style.left = e.clientX + "px";
+      trail.style.top = e.clientY + "px";
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 800);
+    });
+  </script>
+
+  <script>
+    const items = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.3 });
+    items.forEach(item => observer.observe(item));
+  </script>
 
 <script src="principles.js"></script>
 </body>

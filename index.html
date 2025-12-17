@@ -155,10 +155,27 @@
   <button class="button Projects ripple-btn" data-link="Projects.html">
     <span><b>Projects</b></span>
   </button>
-<button class="button Achievements" style="vertical-align:middle"><span><b>Achievements </b></span></button>
+  <button class="button Achievements ripple-btn" data-link="Achievements.html">
+    <span><b>Achievements</b></span>
+  </button>
 
 
   <script src="principles.js"></script>
+
+  <script>
+document.addEventListener("mousemove", e => {
+  const trail = document.createElement("div");
+  trail.classList.add("cursor-trail");
+  trail.style.left = e.clientX + "px";
+  trail.style.top = e.clientY + "px";
+  document.body.appendChild(trail);
+
+  setTimeout(() => {
+    trail.remove();
+  }, 800); // matches the fadeOut animation
+});
+</script>
+
 </body>
 </html>
 

@@ -1,0 +1,227 @@
+
+.snowflakes {
+  color: white;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 10000;
+  animation: fadeOut 0.8s forwards;
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+}
+.pfp{
+
+  display: block;
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  margin: 25px auto;
+  border: 3px solid red;
+  border-radius: 8px;
+  padding: 4px;
+  border-style: dashed;
+  }
+
+
+.button-row {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.button {
+  flex: 1;                 /* each button = equal width */
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+
+.button:active {
+  transform: translateY(5px);
+}
+.button span {
+  display: inline-block;
+  z-index: 2;
+  position: relative;
+  transition: 0.8s;
+}
+
+.Home span:after {
+  content: "🏠";
+  position: absolute;
+  opacity: 0  ;
+  right: 40px;
+  transition: 0.5s;
+}
+
+.About span:after {
+  content: "📝";
+  position: absolute;
+  opacity: 0  ;
+  right: 40px;
+  transition: 0.5s;
+}
+
+.Projects span:after {
+  content: "🎨";
+  position: absolute;
+  opacity: 0  ;
+  right: 40px;
+  transition: 0.5s;
+}
+
+.Achievements span:after {
+  
+  content: "🏆";
+  position: absolute;
+  opacity: 0  ;
+  right: 40px;
+  transition: 0.5s;
+}
+
+.Main span:after {
+  
+  content: "🔎";
+  position: absolute;
+  opacity: 0  ;
+  right: 40px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 45px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:after {
+  content: "";
+  background: #ff1414;
+  display: block;
+  position: absolute;
+  padding-top: 400%;
+  padding-left: 400%;
+  margin-left: -200px;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1s
+
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.Achievements {
+        background-color: #4d4d4db3;
+    border-bottom: 6px solid red;
+
+}
+.About {
+    
+    background-color: #000745;
+}
+.Home {
+    color: #000745;
+}
+.Projects {
+    color: #000745;
+}
+.Main {
+    background-color: #000745;
+}
+
+
+
+.timeline-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 10;
+  position: relative;
+}
+.timeline-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.timeline-hero h1 { font-size: 36px; }
+.timeline-hero p { opacity: 0.85; }
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  border-left: 3px solid red;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-icon {
+  position: absolute;
+  left: -30px;
+  background: red;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(255,20,20,0.5);
+}
+.timeline-content {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(255,20,20,0.6);
+}
